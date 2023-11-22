@@ -4,3 +4,6 @@
 index:
    path: /
    controller: App\Controller\HomeController::index
+inscription:
+   path: /inscription
+   controller: App\Controller\RegisterController::index
