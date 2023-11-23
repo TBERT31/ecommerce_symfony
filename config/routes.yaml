@@ -10,6 +10,9 @@ app_register:
 app_login:
    path: /connexion
    controller: App\Controller\SecurityController::login
+app_logout:
+   path: /deconnexion
+   controller: App\Controller\SecurityController::logout
 app_account:
    path: /compte
    controller: App\Controller\AccountController::index
