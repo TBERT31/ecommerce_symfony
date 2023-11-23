@@ -7,3 +7,6 @@ index:
 inscription:
    path: /inscription
    controller: App\Controller\RegisterController::index
+app_login:
+   path: /connexion
+   controller: App\Controller\SecurityController::login
