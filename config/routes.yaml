@@ -16,3 +16,6 @@ app_logout:
 app_account:
    path: /compte
    controller: App\Controller\AccountController::index
+app_account_password:
+   path: /compte/modifier-mot-de-passe
+   controller: App\Controller\AccountPasswordController::index  
