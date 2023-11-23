@@ -39,15 +39,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item {{ app.request.attributes.get('_route') == 'app_home' ? 'active' : '' }}">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
             {% if app.user %}
-                <a href="{{ path('app_account') }}">Mon Compte</a> | <a href="{{ path('app_logout') }}">Déconnexion</a>
+                <li class="nav-item"><a class="nav-link {{ app.request.attributes.get('_route') == 'app_account' ? 'active' : '' }}" href="{{ path('app_account') }}">Mon Compte</a></li> 
+                <li class="nav-item"><a class="nav-link {{ app.request.attributes.get('_route') == 'app_logout' ? 'active' : '' }}" href="{{ path('app_logout') }}">Déconnexion</a></li>
                 {% else %}
-                <a href="{{ path('app_login') }}">Connexion</a> | <a href="{{ path('app_register') }}">Inscription</a>
+                <li class="nav-item"><a class="nav-link {{ app.request.attributes.get('_route') == 'app_login' ? 'active' : '' }}" href="{{ path('app_login') }}">Connexion</a></li> 
+                <li class="nav-item"><a class="nav-link {{ app.request.attributes.get('_route') == 'app_register' ? 'active' : '' }}" href="{{ path('app_register') }}">Inscription</a></li>
             {% endif %}
+            </ul>
         </div>
     </nav>
 </header>
